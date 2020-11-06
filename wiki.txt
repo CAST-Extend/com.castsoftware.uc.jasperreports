@@ -110,13 +110,14 @@ none at this time
 None
 
 <a name="limitations"></a>
-- Move to an SDK-based extension (to get rid of LanguagePattern)
 - Add links from Java to JRXML
 - Add link from import clause to Java class ( not made currently)
 - Add quality rules related to SQL requests 
 
 <a name="rn"></a>
 # Release Notes
+## Version 2.1.3
+Moved to SDK based extension  
 ## Version 2.1.2
 - Renamed TIN to JasperReport  
 - Changed file extensions from .xml to .jrxml

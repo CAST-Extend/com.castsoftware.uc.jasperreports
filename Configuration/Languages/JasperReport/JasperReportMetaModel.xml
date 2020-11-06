@@ -58,5 +58,34 @@
 		<tree parent="EnlightenJasperReport" category="EnlightenTree"/>
 </type>
 
+<type name="JasperReportReport" rid="7">
+		<description>JasperReport Report</description>
+		<inheritedCategory name="UAObject"/>		
+		<inheritedCategory name="caseInsensitive"/>
+		<inheritedCategory name="METRICABLE"/>
+		<inheritedCategory name="JasperReport"/>
+		<inheritedCategory name="APM JasperReport Artifacts"/>
+		<inheritedCategory name="APM Inventory Programs"/>
+		<inheritedCategory name="EnlightenBrowsable" />
+    	<inheritedCategory name="EnlightenGraphable" />
+    	<inheritedCategory name="WithEnlightenProperties" />
+		<tree parent="sourceFile" category="amtParentship"/>
+		<tree parent="EnlightenJasperReport" category="EnlightenTree"/>
+</type>
+
+<type name = "JasperReportQueryString" rid="8">
+        <description>JasperReport QueryString</description>
+        <inheritedCategory name="APM Client-Server Artifacts"/>  
+        <inheritedCategory name="APM All Artifacts"/>
+        <inheritedCategory name="CAST_PluginObject" />
+        <inheritedCategory name="JasperReport" />
+		<inheritedCategory name="UAObject" />
+		<tree parent="EnlightenJasperReport" category="EnlightenTree"/>
+        <inheritedCategory name="CAST_SQL_MetricableQuery"/>
+        <inheritedCategory name="CAST_MetricAssistant_WithMetrics_PLSQL"/>
+        <attribute name="AUTO_FOLDER_THRESHOLD" intValue="1"/>
+        <tree parent="EnlightenServerObjects" category="ParameterizeTree"/>
+</type>
+
 </metaModel>
 
