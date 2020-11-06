@@ -1,0 +1,123 @@
+Welcome to the com.castsoftware.uc.violationextraction!
+>Warning: The Extension described in this document is delivered as-is. This Extension is made available by CAST User Community and governed by Open Source License. Please consider all necessary steps to validate and to test the Extension in your environment before using it in production.        
+
+The extension is published under GNU LGPL v3 open source license
+
+# Table of content
+- [Introduction](#introduction)
+- [In what situation should you install this extension?](#situation)
+- [CAST AIP versions compatibility](#aipcompatibility)
+- [Supported DBMS servers](#supporteddbms)
+- [Configuration instructions](#configuration)
+- [Operation instructions](#Operation)
+   - [Source preparation and analysis configuration instructions](#preparation)
+   - [Analysis processing](#analysis)
+   - [Checks to be performed upon analysis](#checks)
+- [What results can you expect?](#expect)
+- [Known issues](#KnownIssues)
+- [Limitations and potential enhancements](#limitations)
+- [Release Notes](#rn)
+
+<a name="introduction"></a>
+# Introduction 
+This extension adds support, for **JasperReports** (a BI tool to create reports).  
+It captures each queryString tag inside the different .jrxml files analyzed.  
+The objective is to create a link from this object to the called tables and views in the participating DB.  
+
+<a name="situation"></a>
+# In what situation should you install this extension?
+When your JEE application makes usage of JasperReports and .jrxml files are delivered along with Java source code.  
+There is a participating database.  
+You want links from these reports to the database artifacts.  
+This extension will analyze .jrxml source files.  
+
+<a name="aipcompatibility"></a>
+# CAST AIP versions compatibility
+This extension is compatible with all AIP versions 8.3.x  
+# JasperReports versions compatibility
+
+This extension is compatible with following versions of JasperReports:
+
+| JasperReports version   | Supported | Comment |
+| ------------------------|:---------:|:--------|
+| JasperReports 1.0       |   ![Supported](https://github.com/CAST-Extend/com.castsoftware.uc.peoplesoft.security/blob/master/check.png)  |   |
+| JasperReports 3.5       |   ![Supported](https://github.com/CAST-Extend/com.castsoftware.uc.peoplesoft.security/blob/master/check.png)  |   |
+| JasperReports 3.6       |   ![Not Supported](https://github.com/CAST-Extend/com.castsoftware.uc.peoplesoft.security/blob/master/check.png)  |   |
+| JasperReports 5.1       |   ![Supported](https://github.com/CAST-Extend/com.castsoftware.uc.peoplesoft.security/blob/master/check.png)  |   |
+| JasperReports 5.5       |   ![Not Supported](https://github.com/CAST-Extend/com.castsoftware.uc.peoplesoft.security/blob/master/check.png)  |   |
+
+<a name="supporteddbms"></a>
+# Supported DBMS servers
+N/A
+
+<a name="configuration"></a>
+# Configuration instructions
+Once registered, this extension is integrated to the normal process of a Universal analysis.  
+
+
+<a name="operation"></a>
+# Operation instructions
+## Source preparation and analysis configuration instructions
+
+Deliver your Java source code as normal.  
+There is no preprocessor required for .jrxml files (Jasper Report XML template).  
+  
+Create manually an Analysis Unit for **language JasperReport** and select the **root** of Java source code in **Deploy folder**.  
+
+## Analysis processing
+
+Analysis will be conducted as follow:       
+* The UA engine will run on the selected source code, and save JasperReport objects in the Analysis Service.  
+  * This task produces a log file, important to check.             
+
+## Checks to be performed upon analysis
+
+As for any analysis, the following checks must be performed in order to ensure correct results:       
+* Check the logs described above:
+  * Error should be fixed.
+  * Warning messages should be explained or fixed                
+
+* Check Analysis Unit content
+  * Check at least that the number of JasperReportProgram is equal with the DMT package content (number of .jrxml files)
+In case of mismatch, there is likely a parsing error.
+- Use **UA Assistant** tool, Preview feature to test interactively a few source files (preprocessed ones).
+- Adapt the LanguagePattern.xml's regexp if needed.
+
+<a name="expect"></a>
+# What results can you expect?
+Custom objects will be created in Analysis Service as follow:
+
+## List of custom objects
+| ID          | Custom object type    | 
+| ------------|:----------------------|
+| 3802006     | JasperReport Program           |
+
+
+## Sample graphical view in Enlighten
+
+TOBE
+
+
+<a name="links"></a>
+## Links
+N/A
+<a name="rules"></a>
+## List of quality rules
+none at this time
+
+<a name="knownIssues"></a>
+# Known issues
+None
+
+<a name="limitations"></a>
+- Move to an SDK-based extension (to get rid of LanguagePattern)
+- Add links from Java to JRXML
+- Add link from import clause to Java class ( not made currently)
+- Add quality rules related to SQL requests 
+
+<a name="rn"></a>
+# Release Notes
+## Version 2.1.2
+- Renamed TIN to JasperReport  
+- Changed file extensions from .xml to .jrxml
+

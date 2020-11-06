@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>com.castsoftware.uc.jasperreports</id>
+    <version>2.1.2</version>
+    <title>Technology Extension for JasperReports</title>
+    <authors>CAST User Community</authors>
+    <owners>CAST</owners>
+    <licenseUrl>https://extend.castsoftware.com/V2/Licenses/Cast-Licence-UserCommunity-1.0.html</licenseUrl>
+    <projectUrl>https://github.com/CAST-Extend/com.castsoftware.uc.jasperreports/wiki</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/CAST-Extend/com.castsoftware.uc.jasperreports/master/TIBCOJasperSoft400x400.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This Technology Extension provides a custom support for JasperReports</description>
+    <releaseNotes>Repackaging as extension of existing UA package</releaseNotes>
+    <tags>CASTUserCommunity Framework FP jrxml CAIP8.0 CAIP8.1 CAIP8.2 CAIP8.3 techno:jee</tags>
+    <dependencies>
+      <dependency id="CAIP" version="7.3.4" />
+    </dependencies>
+  </metadata>
+</package>

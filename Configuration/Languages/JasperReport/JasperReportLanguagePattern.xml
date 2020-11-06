@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<languagePattern id="JasperReport">
+	
+	
+<comment>
+		<begin><![CDATA[\<\!--]]></begin>
+		<end><![CDATA[--\>]]></end>
+		<multiline>true</multiline>
+	</comment>
+		
+	<types>
+	
+		<JasperReportProgram>
+			<header>
+				<pattern><![CDATA[<queryString>]]></pattern>
+			</header>
+			<identification.name>	
+				<pattern><![CDATA[<]]></pattern>
+				<value><![CDATA[[a-zA-Z0-9]+]]></value>
+			</identification.name>
+			<body>
+				<begin><![CDATA[CDATA]]></begin>
+				<end><![CDATA[\<\/[a-zA-Z0-9]+>]]></end>
+				<nested>false</nested>
+			</body>
+		</JasperReportProgram>
+	
+	</types>
+	
+	<esql>
+		<begin><![CDATA[\[]]></begin>
+		<end><![CDATA[\]]]></end>
+	</esql>	
+	
+	
+</languagePattern>
